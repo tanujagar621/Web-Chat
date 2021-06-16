@@ -33,7 +33,7 @@ export default function OpenConversation() {
                   {message.text}
                 </div>
                 <div
-                  className={`text-muted small ${
+                  className={`text-muted small align-self-end ${
                     message.fromMe ? "text-right" : ""
                   }`}
                 >
