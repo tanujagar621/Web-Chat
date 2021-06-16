@@ -3,6 +3,7 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 import { ContactsProvider } from "../contexts/ContactsProvider";
+import { ConversationsProvider } from "../contexts/ConversationsProvider";
 
 function App() {
   const [id, setId] = useLocalStorage("id");
@@ -15,7 +16,9 @@ function App() {
 
   return id ? (
     <ContactsProvider>
-      <Dashboard id={id} />
+      <ConversationsProvider id={id}>
+        <Dashboard id={id} />
+      </ConversationsProvider>
     </ContactsProvider>
   ) : (
     <Login onIdSubmit={setId} />

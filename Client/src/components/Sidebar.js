@@ -16,9 +16,9 @@ export default function Sidebar(props) {
   };
   const conversationsOpen = CONVERSATIONS_KEY === activeKey;
   return (
-    <div style={{ width: "250px" }} className="d-flex flex-column">
+    <div style={{ width: "250px" }} className="d-flex flex-column ">
       <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
-        <Nav variant="tabs" className="justify-content-center">
+        <Nav variant="tabs" className="justify-content-center ">
           <Nav.Item>
             <Nav.Link eventKey={CONVERSATIONS_KEY}>Conversations</Nav.Link>
           </Nav.Item>
@@ -26,7 +26,7 @@ export default function Sidebar(props) {
             <Nav.Link eventKey={CONTACTS_KEY}>Contacts</Nav.Link>
           </Nav.Item>
         </Nav>
-        <Tab.Content className="border-end overflow-auto flex-grow-1">
+        <Tab.Content className="border-end overflow-auto flex-grow-1 bg-dark">
           <Tab.Pane eventKey={CONVERSATIONS_KEY}>
             <Conversations />
           </Tab.Pane>
@@ -34,7 +34,7 @@ export default function Sidebar(props) {
             <Contacts />
           </Tab.Pane>
         </Tab.Content>
-        <div class="p-2 border">
+        <div className="p-2 border">
           Your Id: <span className="text-muted">{props.id}</span>
         </div>
         <Button onClick={() => setModalOpen(true)} className="rounded-0">
